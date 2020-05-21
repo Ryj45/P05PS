@@ -57,19 +57,19 @@ public class SongsAdapter extends ArrayAdapter<Song> {
             iv2.setImageResource(android.R.drawable.btn_star_big_off);
             iv1.setImageResource(android.R.drawable.btn_star_big_off);
         } else if (song.getStars() == 1) {
+            iv5.setImageResource(android.R.drawable.btn_star_big_off);
             iv4.setImageResource(android.R.drawable.btn_star_big_off);
             iv3.setImageResource(android.R.drawable.btn_star_big_off);
             iv2.setImageResource(android.R.drawable.btn_star_big_off);
-            iv1.setImageResource(android.R.drawable.btn_star_big_off);
         } else if (song.getStars() == 2) {
+            iv5.setImageResource(android.R.drawable.btn_star_big_off);
+            iv4.setImageResource(android.R.drawable.btn_star_big_off);
             iv3.setImageResource(android.R.drawable.btn_star_big_off);
-            iv2.setImageResource(android.R.drawable.btn_star_big_off);
-            iv1.setImageResource(android.R.drawable.btn_star_big_off);
         } else if (song.getStars() == 3) {
-            iv2.setImageResource(android.R.drawable.btn_star_big_off);
-            iv1.setImageResource(android.R.drawable.btn_star_big_off);
-        } else {
-            iv1.setImageResource(android.R.drawable.btn_star_big_off);
+            iv5.setImageResource(android.R.drawable.btn_star_big_off);
+            iv4.setImageResource(android.R.drawable.btn_star_big_off);
+        } else if(song.getStars() == 4){
+            iv5.setImageResource(android.R.drawable.btn_star_big_off);
         }
 
         return rowView;

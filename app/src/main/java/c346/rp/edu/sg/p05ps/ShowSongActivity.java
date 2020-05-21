@@ -60,7 +60,6 @@ public class ShowSongActivity extends AppCompatActivity {
 
         if(resultCode == RESULT_OK){
             if(data != null) {
-                DBHelper dbh = new DBHelper(ShowSongActivity.this);
                 aa.notifyDataSetChanged();
             }
 

@@ -46,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
                 DBHelper dbh = new DBHelper(MainActivity.this);
                 dbh.insertSong(title, singers, year, stars);
                 Toast.makeText(MainActivity.this, "Inserted", Toast.LENGTH_LONG).show();
+                etTitle.setText("");
+                etSingers.setText("");
+                etYear.setText("");
+                rgStars.clearCheck();
             }
         });
 
