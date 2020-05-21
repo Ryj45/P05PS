@@ -43,9 +43,15 @@ public class MainActivity extends AppCompatActivity {
                 rb = findViewById(index);
                 int stars = Integer.parseInt(rb.getText().toString());
 
+                if(title.length() == 0 || singers.length() == 0 || etYear.getText().toString().length() == 0 || String.valueOf(index).length() == 0){
+                    return;
+                }
+
                 DBHelper dbh = new DBHelper(MainActivity.this);
-                dbh.insertSong(title, singers, year, stars);
-                Toast.makeText(MainActivity.this, "Inserted", Toast.LENGTH_LONG).show();
+                long insert_id = dbh.insertSong(title, singers, year, stars);
+                if(insert_id != 1) {
+                    Toast.makeText(MainActivity.this, "Inserted", Toast.LENGTH_LONG).show();
+                }
                 etTitle.setText("");
                 etSingers.setText("");
                 etYear.setText("");

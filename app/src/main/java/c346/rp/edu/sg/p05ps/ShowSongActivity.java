@@ -60,7 +60,11 @@ public class ShowSongActivity extends AppCompatActivity {
 
         if(resultCode == RESULT_OK){
             if(data != null) {
-                aa.notifyDataSetChanged();
+                DBHelper dbh = new DBHelper(ShowSongActivity.this);
+                ArrayList<Song> songs = dbh.getAllSongs();
+
+                aa = new SongsAdapter(ShowSongActivity.this, R.layout.row, songs);
+                lvSongs.setAdapter(aa);
             }
 
         }

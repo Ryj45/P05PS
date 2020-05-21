@@ -40,15 +40,19 @@ public class DBHelper  extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insertSong(String title, String singers, int year, int stars) {
+    public long insertSong(String title, String singers, int year, int stars) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_TITLE, title);
         values.put(COLUMN_SINGERS, singers);
         values.put(COLUMN_YEAR, year);
         values.put(COLUMN_STARS, stars);
-        db.insert(TABLE_SONG, null, values);
+        long result = db.insert(TABLE_SONG, null, values);
         db.close();
+        if(result == -1){
+            Log.d("DBHelper", "Insert failed");
+        }
+        return result;
     }
 
     public ArrayList<Song> getAllSongs(){
